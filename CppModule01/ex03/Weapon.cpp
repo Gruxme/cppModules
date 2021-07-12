@@ -1,15 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: abiari <abiari@student.1337.ma>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/12 19:44:07 by abiari            #+#    #+#             */
+/*   Updated: 2021/07/12 20:02:57 by abiari           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Weapon.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Weapon::Weapon()
-{
-}
+Weapon::Weapon() {}
 
-Weapon::Weapon( const Weapon & src )
+Weapon::Weapon( std::string type )
 {
+	this->setType(type);
 }
 
 
@@ -21,27 +32,6 @@ Weapon::~Weapon()
 {
 }
 
-
-/*
-** --------------------------------- OVERLOAD ---------------------------------
-*/
-
-Weapon &				Weapon::operator=( Weapon const & rhs )
-{
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
-	return *this;
-}
-
-std::ostream &			operator<<( std::ostream & o, Weapon const & i )
-{
-	//o << "Value = " << i.getValue();
-	return o;
-}
-
-
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
@@ -51,5 +41,13 @@ std::ostream &			operator<<( std::ostream & o, Weapon const & i )
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+const std::string&	Weapon::getType( void )
+{
+	return this->_type;
+}
 
+void	Weapon::setType( std::string type )
+{
+	this->_type = type;
+}
 /* ************************************************************************** */

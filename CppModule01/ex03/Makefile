@@ -6,13 +6,13 @@
 #    By: abiari <abiari@student.1337.ma>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/12 13:07:32 by abiari            #+#    #+#              #
-#    Updated: 2021/07/12 17:01:50 by abiari           ###   ########.fr        #
+#    Updated: 2021/07/12 20:09:25 by abiari           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = main
+NAME = Violence
 CC = clang++
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g3
 SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
 all: $(NAME)
