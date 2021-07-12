@@ -6,7 +6,7 @@
 /*   By: abiari <abiari@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 18:34:52 by abiari            #+#    #+#             */
-/*   Updated: 2021/07/12 12:41:40 by abiari           ###   ########.fr       */
+/*   Updated: 2021/07/12 13:28:24 by abiari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,8 @@ int Account::_totalNbWithdrawals = 0;
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Account::Account( int initial_deposit )
+Account::Account( int initial_deposit ) : _amount(initial_deposit)
 {
-	this->_amount = initial_deposit;
 	this->_nbDeposits = 0;
 	this->_nbWithdrawals = 0;
 	Account::_totalAmount += initial_deposit;
