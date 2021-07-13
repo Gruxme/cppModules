@@ -6,7 +6,7 @@
 /*   By: abiari <abiari@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 15:50:38 by abiari            #+#    #+#             */
-/*   Updated: 2021/07/13 18:41:21 by abiari           ###   ########.fr       */
+/*   Updated: 2021/07/13 20:54:22 by abiari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,11 @@ class Fixed
 		void		setRawBits( int const raw );
 		float		toFloat( void ) const;
 		int			toInt( void ) const;
-		static int&	min();
+		static Fixed &	min( Fixed& value1, Fixed& value2 );
+		static Fixed &	min( Fixed& const value1, Fixed& const value2 );
+		static Fixed &	max( Fixed& value1, Fixed& value2 );
+		static Fixed &	max( Fixed& const value1, Fixed& const value2 );
+		
 	private:
 
 		int					_fixedPointValue;
