@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abiari <abiari@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/12 21:56:28 by abiari            #+#    #+#             */
-/*   Updated: 2021/07/12 21:56:29 by abiari           ###   ########.fr       */
+/*   Created: 2021/07/14 10:55:22 by abiari            #+#    #+#             */
+/*   Updated: 2021/07/14 13:02:24 by abiari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
+#include "ScavTrap.hpp"
 
-# include "Weapon.hpp"
-
-class HumanA
+int	main( void )
 {
+	ScavTrap	Scav("spoody");
+	ClapTrap	Clap("Qbeast");
 
-	public:
+	Clap.attack("student");
+	Clap.takeDamage(7);
+	Clap.beRepaired(5);
 
-		HumanA( std::string name, Weapon& type ) : _weapon(type), _name(name) {}
-		~HumanA();
-		void	attack( void );
-
-	private:
-
-	Weapon&	_weapon;
-	std::string	_name;
-	
-	HumanA();
-};
-
-#endif /* ********************************************************** HUMANA_H */
+	Scav.attack("piscineux");
+	Scav.takeDamage(7);
+	Scav.beRepaired(5);
+	Scav.guardGate();
+	return 0;
+}

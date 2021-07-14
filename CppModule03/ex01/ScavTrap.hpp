@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abiari <abiari@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/12 21:56:28 by abiari            #+#    #+#             */
-/*   Updated: 2021/07/12 21:56:29 by abiari           ###   ########.fr       */
+/*   Created: 2021/07/14 12:03:16 by abiari            #+#    #+#             */
+/*   Updated: 2021/07/14 12:57:26 by abiari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_HPP
-# define HUMANA_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-# include "Weapon.hpp"
+#include "ClapTrap.hpp"
+# include <iostream>
+# include <string>
 
-class HumanA
+class ScavTrap : public ClapTrap
 {
 
 	public:
 
-		HumanA( std::string name, Weapon& type ) : _weapon(type), _name(name) {}
-		~HumanA();
-		void	attack( void );
+		ScavTrap( std::string name );
+		ScavTrap( ScavTrap const & src );
+		~ScavTrap();
+		
+		void	guardGate( void );
 
 	private:
 
-	Weapon&	_weapon;
-	std::string	_name;
-	
-	HumanA();
+		ScavTrap();
 };
 
-#endif /* ********************************************************** HUMANA_H */
+#endif /* ******************************************************** SCAVTRAP_H */
