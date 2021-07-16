@@ -1,36 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abiari <abiari@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/14 12:03:16 by abiari            #+#    #+#             */
-/*   Updated: 2021/07/16 22:48:44 by abiari           ###   ########.fr       */
+/*   Created: 2021/07/16 23:05:39 by abiari            #+#    #+#             */
+/*   Updated: 2021/07/16 23:16:57 by abiari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-#include "ClapTrap.hpp"
 # include <iostream>
 # include <string>
+# include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 
 	public:
 
-		ScavTrap( std::string name );
-		ScavTrap( ScavTrap const & src );
-		~ScavTrap();
-		
-		void	guardGate( void );
+		FragTrap();
+		FragTrap( std::string name);
+		FragTrap( FragTrap const & src );
+		~FragTrap();
+
+		void	attack( std::string const &target );
+		void	takeDamage( unsigned int amount );
+		void	beRepaired( unsigned int amount );
+		void	highFivesGuy( void );
 
 	private:
 
-		ScavTrap();
 };
 
-#endif /* ******************************************************** SCAVTRAP_H */
+#endif /* ******************************************************** FRAGTRAP_H */

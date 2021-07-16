@@ -6,26 +6,22 @@
 /*   By: abiari <abiari@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 10:55:22 by abiari            #+#    #+#             */
-/*   Updated: 2021/07/16 22:56:32 by abiari           ###   ########.fr       */
+/*   Updated: 2021/07/16 23:36:57 by abiari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main( void )
 {
-	ScavTrap	Scav("spoody");
-	ClapTrap	Clap("Qbeast");
+	DiamondTrap	Diamond("spoody");
 
-	Clap.attack("student");
-	Clap.takeDamage(7);
-	Clap.beRepaired(5);
-	std::cout << Clap << std::endl;
-
-	Scav.attack("piscineux");
-	Scav.takeDamage(7);
-	Scav.beRepaired(5);
-	Scav.guardGate();
-	std::cout << Scav << std::endl;
+	Diamond.attack("student");
+	Diamond.takeDamage(7);
+	Diamond.beRepaired(5);
+	Diamond.guardGate();
+	Diamond.highFivesGuy();
+	Diamond.whoAmI();
+	std::cout << Diamond << std::endl;
 	return 0;
 }

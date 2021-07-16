@@ -6,7 +6,7 @@
 /*   By: abiari <abiari@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 10:55:22 by abiari            #+#    #+#             */
-/*   Updated: 2021/07/14 17:35:14 by abiari           ###   ########.fr       */
+/*   Updated: 2021/07/16 23:02:06 by abiari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 int	main( void )
 {
-	FragTrap	Scav("spoody");
+	FragTrap	Frag("spoody");
 	ClapTrap	Clap("Qbeast");
 
 	Clap.attack("student");
 	Clap.takeDamage(7);
 	Clap.beRepaired(5);
+	std::cout << Clap << std::endl;
 
-	Scav.attack("piscineux");
-	Scav.takeDamage(7);
-	Scav.beRepaired(5);
-	Scav.highFivesGuy();
+	Frag.attack("piscineux");
+	Frag.takeDamage(7);
+	Frag.beRepaired(5);
+	Frag.highFivesGuy();
+	std::cout << Frag << std::endl;
 	return 0;
 }
