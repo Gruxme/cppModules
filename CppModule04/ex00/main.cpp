@@ -4,23 +4,21 @@
 
 int main(void)
 {
-	const Animal *meta = new Animal();
-	const Animal *tootToot = new Dog();
-	const Animal *sidney = new Cat();
+	Animal**	animals = new Animal*[10];
+
+	for (int i = 0; i < 10; i++)
+	{
+		if (i % 2 == 0)
+			animals[i] = new Cat();
+		else
+			animals[i] = new Dog();
+	}
 	
-
-	std::cout << sidney->getType() << " " << std::endl;
-	std::cout << tootToot->getType() << " " << std::endl;
-	sidney->makeSound(); //will output the cat sound!
-	tootToot->makeSound();
-	meta->makeSound();
-
-	std::cout << "----------------------------Wrong--------------------------------\n";
-	const WrongAnimal *wrongMeta = new WrongAnimal();
-	const WrongAnimal *wrongSidney = new WrongCat();
-
-	std::cout << wrongSidney->getType() << " " << std::endl;
-	wrongSidney->makeSound(); //will output the WrongAnimal sound!
-	wrongMeta->makeSound();
+	for (int i = 0; i < 10; i++)
+	{
+		delete animals[i];
+	}
+	delete[] animals;
+	
 	return 0;
 }
