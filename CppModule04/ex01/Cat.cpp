@@ -4,15 +4,14 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Cat::Cat() : Animal("Cat")
+Cat::Cat() : Animal("Cat"), _brain(new Brain())
 {
-	this->brain = new Brain();
 	std::cout << "Cat Constructor called!\n";
 }
 
 Cat::Cat( const Cat & src )
 {
-	this->operator=(src);
+	//do a deep copy here and in Dog
 }
 
 
@@ -22,7 +21,7 @@ Cat::Cat( const Cat & src )
 
 Cat::~Cat()
 {
-	delete this->brain;
+	delete this->_brain;
 	std::cout << "Cat Destructor called!\n";
 }
 

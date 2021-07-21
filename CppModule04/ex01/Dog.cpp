@@ -4,9 +4,8 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Dog::Dog() : Animal("Dog")
+Dog::Dog() : Animal("Dog"), _brain(new Brain())
 {
-	this->brain = new Brain();
 	std::cout << "Dog Constructor called!\n";
 }
 
@@ -22,6 +21,7 @@ Dog::Dog( const Dog & src )
 
 Dog::~Dog()
 {
+	delete this->_brain;
 	std::cout << "Dog Destructor called!\n";
 }
 

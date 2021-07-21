@@ -18,7 +18,7 @@ class Cat : public Animal
 		void	makeSound( void ) const;
 
 	private:
-		Brain* brain;
+		Brain* _brain;
 };
 
 #endif /* ************************************************************* CAT_H */
