@@ -1,11 +1,9 @@
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 
-# include <iostream>
-# include <string>
 # include "AMateria.hpp"
 
-class ICharacter
+class AMateria; class ICharacter
 {
 	public:
 		virtual ~ICharacter() {}

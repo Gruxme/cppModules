@@ -5,6 +5,7 @@
 # include <string>
 # include "ICharacter.hpp"
 
+class	ICharacter;
 class AMateria
 {
 	protected:
@@ -14,14 +15,12 @@ class AMateria
 	public:
 
 		AMateria(std::string const &type);
-		~AMateria();
+		virtual	~AMateria();
 
 		std::string const &getType() const; //Returns the materia type
 
 		virtual AMateria *clone() const = 0;
-		virtual void use(ICharacter &target);
+		virtual void use(ICharacter &target) = 0;
 };
-
-std::ostream &			operator<<( std::ostream & o, AMateria const & i );
 
 #endif /* ******************************************************** AMATERIA_H */

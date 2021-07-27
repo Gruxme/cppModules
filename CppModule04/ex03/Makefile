@@ -6,14 +6,14 @@
 #    By: abiari <abiari@student.1337.ma>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 10:55:48 by abiari            #+#    #+#              #
-#    Updated: 2021/07/14 10:56:59 by abiari           ###   ########.fr        #
+#    Updated: 2021/07/27 18:01:13 by abiari           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = Materia
 CC = clang++
 CFLAGS = -Wall -Werror -Wextra 
-SRC = main.cpp ClapTrap.cpp
+SRC = main.cpp Ice.cpp Cure.cpp MateriaSource.cpp Character.cpp AMateria.cpp
 
 all: $(NAME)
 

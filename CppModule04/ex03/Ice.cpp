@@ -1,11 +1,16 @@
-#include "AMateria.hpp"
+#include "Ice.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-AMateria::AMateria(std::string const & type) : _type(type)
+Ice::Ice() : AMateria("ice")
 {
+}
+
+Ice::Ice( const Ice & src ) : AMateria("ice")
+{
+	this->operator=(src);
 }
 
 
@@ -13,7 +18,7 @@ AMateria::AMateria(std::string const & type) : _type(type)
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-AMateria::~AMateria()
+Ice::~Ice()
 {
 }
 
@@ -22,17 +27,25 @@ AMateria::~AMateria()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
+
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
+AMateria*	Ice::clone() const
+{
+	AMateria* returnObj = new Ice();
+
+	return returnObj;
+}
+
+void	Ice::use(ICharacter &target)
+{
+	std::cout << "* shoot an ice bolt at " + target.getName() + " *\n"; 
+}
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-std::string const &	AMateria::getType( void ) const
-{
-	return this->_type;
-}
 
 /* ************************************************************************** */
