@@ -1,16 +1,15 @@
-#include "Brain.hpp"
+#include "AMateria.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Brain::Brain()
+AMateria::AMateria()
 {
 }
 
-Brain::Brain( const Brain & src )
+AMateria::AMateria( const AMateria & src )
 {
-	this->operator=(src);
 }
 
 
@@ -18,7 +17,7 @@ Brain::Brain( const Brain & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Brain::~Brain()
+AMateria::~AMateria()
 {
 }
 
@@ -27,17 +26,21 @@ Brain::~Brain()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Brain &				Brain::operator=( Brain const & rhs )
+AMateria &				AMateria::operator=( AMateria const & rhs )
 {
-	if ( this != &rhs )
-	{
-		for(int i = 0; i < 100; i++)
-		{
-			this->ideas[i] = rhs.ideas[i];
-		}
-	}
+	//if ( this != &rhs )
+	//{
+		//this->_value = rhs.getValue();
+	//}
 	return *this;
 }
+
+std::ostream &			operator<<( std::ostream & o, AMateria const & i )
+{
+	//o << "Value = " << i.getValue();
+	return o;
+}
+
 
 /*
 ** --------------------------------- METHODS ----------------------------------

@@ -6,14 +6,15 @@
 #    By: abiari <abiari@student.1337.ma>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 10:55:48 by abiari            #+#    #+#              #
-#    Updated: 2021/07/14 10:56:59 by abiari           ###   ########.fr        #
+#    Updated: 2021/07/25 18:25:13 by abiari           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = Animals
 CC = clang++
-CFLAGS = -Wall -Werror -Wextra 
-SRC = main.cpp ClapTrap.cpp
+CFLAGS = -Wall -Werror -Wextra -g3
+SRC = main.cpp Dog.cpp Cat.cpp Animal.cpp Brain.cpp
+
 
 all: $(NAME)
 

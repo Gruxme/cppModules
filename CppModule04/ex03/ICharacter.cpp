@@ -1,16 +1,15 @@
-#include "Brain.hpp"
+#include "ICharacter.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Brain::Brain()
+ICharacter::ICharacter()
 {
 }
 
-Brain::Brain( const Brain & src )
+ICharacter::ICharacter( const ICharacter & src )
 {
-	this->operator=(src);
 }
 
 
@@ -18,7 +17,7 @@ Brain::Brain( const Brain & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Brain::~Brain()
+ICharacter::~ICharacter()
 {
 }
 
@@ -27,17 +26,21 @@ Brain::~Brain()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Brain &				Brain::operator=( Brain const & rhs )
+ICharacter &				ICharacter::operator=( ICharacter const & rhs )
 {
-	if ( this != &rhs )
-	{
-		for(int i = 0; i < 100; i++)
-		{
-			this->ideas[i] = rhs.ideas[i];
-		}
-	}
+	//if ( this != &rhs )
+	//{
+		//this->_value = rhs.getValue();
+	//}
 	return *this;
 }
+
+std::ostream &			operator<<( std::ostream & o, ICharacter const & i )
+{
+	//o << "Value = " << i.getValue();
+	return o;
+}
+
 
 /*
 ** --------------------------------- METHODS ----------------------------------

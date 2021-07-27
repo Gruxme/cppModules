@@ -9,7 +9,6 @@ class Animal
 
 	public:
 
-		Animal();
 		Animal( std::string type );
 		Animal( Animal const & src );
 		virtual ~Animal();
@@ -17,11 +16,13 @@ class Animal
 		Animal &		operator=( Animal const & rhs );
 
 		std::string		getType( void ) const;
-		void virtual	makeSound( void ) const;
+		void virtual	makeSound( void ) const = 0;
 
 	protected:
 		std::string	_type;
 
+	private:
+		Animal();
 };
 
 std::ostream &			operator<<( std::ostream & o, Animal const & i );

@@ -1,15 +1,19 @@
-#include "Cat.hpp"
+#include "Animal.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Cat::Cat() : Animal("Cat"), _brain(new Brain())
+Animal::Animal()
 {
-	std::cout << "Cat Constructor called!\n";
 }
 
-Cat::Cat( const Cat & src ) : Animal("Cat")
+Animal::Animal( std::string type ) : _type(type)
+{
+	std::cout << "Animal Parameterized Constructor called!\n";
+}
+
+Animal::Animal( const Animal & src )
 {
 	this->operator=(src);
 }
@@ -19,10 +23,9 @@ Cat::Cat( const Cat & src ) : Animal("Cat")
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Cat::~Cat()
+Animal::~Animal()
 {
-	delete this->_brain;
-	std::cout << "Cat Destructor called!\n";
+	std::cout << "Animal Destructor called!\n";
 }
 
 
@@ -30,32 +33,33 @@ Cat::~Cat()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Cat &	Cat::operator=( Cat const & rhs )
+Animal &				Animal::operator=( Animal const & rhs )
 {
-	this->_brain = new Brain();
 	if ( this != &rhs )
 	{
-		this->_brain->operator=(*(rhs._brain));
+		this->_type = rhs.getType();
 	}
 	return *this;
 }
+
+std::ostream &			operator<<( std::ostream & o, Animal const & i )
+{
+	o << i.getType();
+	return o;
+}
+
 
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void	Cat::makeSound() const
-{
-	std::cout << "Mgheeeeow eow\n";
-}
-
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-Brain*	Cat::getBrain( void )
+std::string	Animal::getType( void ) const
 {
-	return this->_brain;
+	return this->_type;
 }
 
 /* ************************************************************************** */
