@@ -54,6 +54,14 @@ void	Bureaucrat::decGrade( void )
 		this->_grade++;
 }
 
+void	Bureaucrat::signForm( Form const & form )
+{
+	if (form.getSignGrade() > this->_grade)
+		std::cout << this->_name + " signs " + form.getName() << std::endl;
+	else
+		std::cout << this->_name + " cannot sign because: ";
+}
+
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
