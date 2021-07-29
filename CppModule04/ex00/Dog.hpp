@@ -12,9 +12,9 @@ class Dog : public Animal
 
 		Dog();
 		Dog( Dog const & src );
-		~Dog();
+		virtual ~Dog();
 
-		void	makeSound( void ) const;
+		virtual void	makeSound( void ) const;
 	private:
 
 };

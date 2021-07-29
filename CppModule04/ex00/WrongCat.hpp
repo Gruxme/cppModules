@@ -12,9 +12,9 @@ class WrongCat : public WrongAnimal
 
 		WrongCat();
 		WrongCat( WrongCat const & src );
-		~WrongCat();
+		virtual ~WrongCat();
 
-		void	makeSound( void ) const;
+		virtual void	makeSound( void ) const;
 	private:
 
 };

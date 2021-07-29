@@ -12,10 +12,10 @@ class Ice : public AMateria
 
 		Ice();
 		Ice( Ice const & src );
-		~Ice();
+		virtual ~Ice();
 
-		AMateria*	clone() const;
-		void		use(ICharacter& target);
+		virtual AMateria*	clone() const;
+		virtual void		use(ICharacter& target);
 	private:
 
 };

@@ -12,12 +12,12 @@ class WrongAnimal
 		WrongAnimal();
 		WrongAnimal( std::string type );
 		WrongAnimal( WrongAnimal const & src );
-		~WrongAnimal();
+		virtual ~WrongAnimal();
 
 		WrongAnimal &		operator=( WrongAnimal const & rhs );
 
 		std::string		getType( void ) const;
-		void			makeSound( void ) const;
+		virtual void	makeSound( void ) const;
 
 	protected:
 		std::string	_type;
