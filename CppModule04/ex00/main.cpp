@@ -2,23 +2,14 @@
 #include "Cat.hpp"
 #include "WrongCat.hpp"
 
-int main(void)
+int main()
 {
-	Animal**	animals = new Animal*[10];
-
-	for (int i = 0; i < 10; i++)
-	{
-		if (i % 2 == 0)
-			animals[i] = new Cat();
-		else
-			animals[i] = new Dog();
-	}
-	
-	for (int i = 0; i < 10; i++)
-	{
-		delete animals[i];
-	}
-	delete[] animals;
-	
-	return 0;
+	const Animal* meta = new Animal();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
+	std::cout << j->getType() << " " << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	i->makeSound(); //will output the cat sound!
+	j->makeSound();
+	meta->makeSound();
 }

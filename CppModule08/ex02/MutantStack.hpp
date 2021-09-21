@@ -6,15 +6,15 @@
 # include <vector>
 # include <list>
 
-template <class Type, class Container=std::vector<Type>>
+template <class Type, class Container = std::vector<Type> >
 class MutantStack
 {
 	public:
 
-		typedef size_t size_type;
-		typedef Type value_type;
-		typedef Container container_type;
-		typedef Type& reference;
+		typedef size_t		size_type;
+		typedef Type 		value_type;
+		typedef Container	container_type;
+		typedef Type& 		reference;
 		typedef const Type& const_reference;
 	protected:
 

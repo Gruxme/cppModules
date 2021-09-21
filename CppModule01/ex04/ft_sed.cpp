@@ -6,7 +6,7 @@
 /*   By: abiari <abiari@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/12 21:05:21 by abiari            #+#    #+#             */
-/*   Updated: 2021/07/13 08:53:44 by abiari           ###   ########.fr       */
+/*   Updated: 2021/09/19 17:39:21 by abiari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ int	main( int argc, char **argv )
 		std::string		out;
 		std::string		line;
 		std::ifstream	ifs(argv[1]);
+		if (ifs.fail())
+		{
+			std::cout << argv[1] << "no such file\n";
+			return 1;
+		}
 		std::ofstream	ofs(out.append(argv[1]).append(".replace"));
 		while (!ifs.eof())
 		{

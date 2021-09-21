@@ -6,6 +6,7 @@
 
 Brain::Brain()
 {
+	std::cout << "Brain Constructor called!" << std::endl;
 }
 
 Brain::Brain( const Brain & src )
@@ -20,6 +21,7 @@ Brain::Brain( const Brain & src )
 
 Brain::~Brain()
 {
+	std::cout << "Brain Destructor called!" << std::endl;
 }
 
 

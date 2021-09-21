@@ -29,13 +29,19 @@ WrongCat::~WrongCat()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
+WrongCat & WrongCat::operator=(const WrongCat & rhs)
+{
+	(void)rhs;
+	return *this;
+}
+
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
 
 void	WrongCat::makeSound() const
 {
-	std::cout << "Mgheeeeow eow\n";
+	std::cout << "Mgheeeeow eow (from wrong cat)\n";
 }
 
 /*

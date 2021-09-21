@@ -6,7 +6,7 @@
 /*   By: abiari <abiari@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 17:38:55 by abiari            #+#    #+#             */
-/*   Updated: 2021/07/27 17:44:52 by abiari           ###   ########.fr       */
+/*   Updated: 2021/09/21 09:47:39 by abiari           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,22 @@ int main()
 	me->equip(materia);
 	materia = src->createMateria("cure");
 	me->equip(materia);
-	
 	ICharacter *bob = new Character("bob");
 	
 	me->use(0, *bob);
 	me->use(1, *bob);
 	me->unequip(1);
 	me->use(1, *bob);
+	me->use(0, *bob);
+	me->unequip(0);
+	me->use(0, *bob);
 	
+	std::cout << "clone test ----------------------" << std::endl;
+	AMateria *cloneCure;
+	materia = src->createMateria("cure");
+	cloneCure = materia->clone();
+	me->equip(cloneCure);
+	me->use(0, *bob);
 	delete bob;
 	delete me;
 	delete src;

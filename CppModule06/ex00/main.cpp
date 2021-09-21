@@ -40,7 +40,10 @@ int main(int argc, char const *argv[])
 	std::string	literal;
 
 	if (argc != 2)
+	{
 		std::cerr << "Too much arguments!\n";
+		return 1;
+	}
 	if (strlen(argv[1]) == 1 && argv[1][0] < 48 && argv[1][0] > 57)
 	{
 		charScalar = argv[1][0];

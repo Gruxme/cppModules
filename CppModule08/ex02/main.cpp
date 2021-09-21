@@ -19,8 +19,9 @@ int main()
 	--it;
 	while (it != ite)
 	{
-		std::cout << *it << std::endl;
+		std::cout << "value: " << *it << " ";
 		++it;
 	}
+	std::cout << std::endl;
 	return 0;
 }

@@ -27,6 +27,13 @@ Cure::~Cure()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
+Cure & Cure::operator=(Cure const &rhs)
+{
+	if (this != &rhs)
+		this->_type = rhs._type;
+	return *this;
+}
+
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
