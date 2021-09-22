@@ -85,4 +85,28 @@ int					Form::getExecGrade( void ) const
 	return this->_execGrade;
 }
 
+/*
+** --------------------------------- EXCEPTIONS ---------------------------------
+*/
+
+Form::GradeTooHighException::GradeTooHighException() throw() {}
+Form::GradeTooLowException::GradeTooLowException() throw() {}
+Form::FormNotSigned::FormNotSigned() throw() {}
+
+Form::GradeTooHighException::~GradeTooHighException() throw() {}
+Form::GradeTooLowException::~GradeTooLowException() throw() {}
+Form::FormNotSigned::~FormNotSigned() throw() {}
+
+const char*		Form::GradeTooHighException::what() const throw()
+{
+	return "Grade is too High!";
+}
+const char*		Form::GradeTooLowException::what() const throw()
+{
+	return "Grade is too Low!";
+}
+const char*		Form::FormNotSigned::what() const throw()
+{
+	return "Form is not signed!";
+}
 /* ************************************************************************** */

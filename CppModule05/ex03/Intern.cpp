@@ -8,6 +8,11 @@ Intern::Intern()
 {
 }
 
+Intern::Intern(Intern const & src)
+{
+	this->operator=(src);
+}
+
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
@@ -20,6 +25,11 @@ Intern::~Intern()
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
+
+Intern &		Intern::operator=( Intern const & rhs )
+{
+	return *this;
+}
 
 /*
 ** --------------------------------- METHODS ----------------------------------
@@ -48,5 +58,16 @@ Form*	Intern::makeForm( std::string name, std::string target )
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+
+/*
+** --------------------------------- EXCEPTIONS ---------------------------------
+*/
+
+Intern::FormNotFound::FormNotFound() throw() {}
+Intern::FormNotFound::~FormNotFound() throw() {}
+const char* Intern::FormNotFound::what() const throw()
+{
+	return "No such Form found!";
+}
 
 /* ************************************************************************** */

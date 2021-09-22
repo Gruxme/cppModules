@@ -32,25 +32,25 @@ class Form
 		{
 			public:
 
-				GradeTooHighException() throw() {}
-				virtual ~GradeTooHighException() throw() {}
-				virtual const char* what() const throw() { return "Grade is too High!"; }
+				GradeTooHighException() throw();
+				virtual ~GradeTooHighException() throw();
+				virtual const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception
 		{
 			public:
 
-				GradeTooLowException() throw() {}
-				virtual ~GradeTooLowException() throw() {}
-				virtual const char* what() const throw() { return "Grade is too Low!"; }
+				GradeTooLowException() throw();
+				virtual ~GradeTooLowException() throw();
+				virtual const char* what() const throw();
 		};
 		class FormNotSigned : public std::exception
 		{
 			public:
 
-				FormNotSigned() throw() {}
-				virtual ~FormNotSigned() throw() {}
-				virtual const char* what() const throw() { return "Form is not signed!"; }
+				FormNotSigned() throw();
+				virtual ~FormNotSigned() throw();
+				virtual const char* what() const throw();
 		};
 
 	private:

@@ -3,7 +3,7 @@
 
 int main(void)
 {
-	Form		form1("chadat sokna", 150, 1);
+	Form		form1("chahadat sokna", 150, 1);
 	Form		form2("3aqd izdiad", 1, 1);
 	Bureaucrat	bureaucrat1("qaid", 1);
 	Bureaucrat	bureaucrat2("mqadem", 149);

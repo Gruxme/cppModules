@@ -29,9 +29,9 @@ class Intern
 		{
 			public:
 
-				FormNotFound() throw() {}
-				virtual ~FormNotFound() throw() {}
-				virtual const char* what() const throw() { return "No such Form found!"; }
+				FormNotFound() throw();
+				virtual ~FormNotFound() throw();
+				virtual const char* what() const throw();
 		};
 	private:
 

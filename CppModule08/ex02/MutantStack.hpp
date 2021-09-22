@@ -3,10 +3,10 @@
 
 # include <iostream>
 # include <string>
-# include <vector>
+# include <deque>
 # include <list>
 
-template <class Type, class Container = std::vector<Type> >
+template <class Type, class Container = std::deque<Type> >
 class MutantStack
 {
 	public:
@@ -30,10 +30,10 @@ class MutantStack
 		iterator 			end() { return this->c.end(); }
 		bool				empty( void ) const { return this->c.empty(); }
 		size_type			size() const { return this->c.size(); }
-		reference			top() { return this->c.back(); }
-		const_reference		top() const { return this->c.back(); }
-		void				push(const value_type& val) { this->c.push_back(val); }
-		void				pop() { this->c.pop_back(); }
+		reference			top() { return this->c.front(); }
+		const_reference		top() const { return this->c.front(); }
+		void				push(const value_type& val) { this->c.push_front(val); }
+		void				pop() { this->c.pop_front(); }
 
 };
 

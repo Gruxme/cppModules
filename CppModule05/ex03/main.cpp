@@ -14,6 +14,7 @@ int main(void)
 
 	try
 	{
+		povre.makeForm("chahadat lhayat", "lwalid");
 		shrubberyForm = povre.makeForm("robotomy request", "Garden");
 		robotomyForm = povre.makeForm("shrubbery creation", "Well");
 		presidentialPardonForm = povre.makeForm("presidential pardon", "Abmoula");
@@ -23,16 +24,16 @@ int main(void)
 		bureaucrat1.executeForm(*shrubberyForm);
 		bureaucrat1.executeForm(*robotomyForm);
 		bureaucrat1.executeForm(*presidentialPardonForm);
+		std::cout << "=============================================================" << std::endl;
+		std::cout << bureaucrat1 << std::endl;
+		std::cout << *shrubberyForm << std::endl;
+		std::cout << *robotomyForm << std::endl;
+		std::cout << *presidentialPardonForm << std::endl;
 	}
 	catch (const std::exception& e)
 	{
 		std::cerr << e.what() << '\n';
 	}
 	
-	
-	std::cout << bureaucrat1 << std::endl;
-	std::cout << *shrubberyForm << std::endl;
-	std::cout << *robotomyForm << std::endl;
-	std::cout << *presidentialPardonForm << std::endl;
 	return 0;
 }
