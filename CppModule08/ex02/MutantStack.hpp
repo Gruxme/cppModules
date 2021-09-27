@@ -4,10 +4,11 @@
 # include <iostream>
 # include <string>
 # include <deque>
+#include <stack>
 # include <list>
 
 template <class Type, class Container = std::deque<Type> >
-class MutantStack
+class MutantStack : public std::stack<Type>
 {
 	public:
 
@@ -22,6 +23,7 @@ class MutantStack
 	public:
 		MutantStack( const container_type& c = container_type()) : c(c) {}
 		MutantStack( MutantStack const & src ) : c(src.c) {}
+		MutantStack & operator=(MutantStack const & src) { return this->c.operator=(src);}
 		virtual ~MutantStack() {}
 
 		typedef typename container_type::iterator iterator;

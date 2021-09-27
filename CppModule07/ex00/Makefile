@@ -6,13 +6,13 @@
 #    By: abiari <abiari@student.1337.ma>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 10:55:48 by abiari            #+#    #+#              #
-#    Updated: 2021/08/01 19:14:33 by abiari           ###   ########.fr        #
+#    Updated: 2021/09/24 14:52:12 by abiari           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = Whatever
 CC = clang++
-CFLAGS = -Wall -Werror -Wextra -g3
+CFLAGS = -Wall -Werror -Wextra
 SRC = main.cpp
 all: $(NAME)
 

@@ -41,7 +41,7 @@ void identify(Base& p)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << "Cast failed!: " << e.what() << '\n';
 	}
 	try
 	{
@@ -51,7 +51,7 @@ void identify(Base& p)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << "Cast failed!: " << e.what() << '\n';
 	}
 	try
 	{
@@ -61,7 +61,7 @@ void identify(Base& p)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << "Cast failed!: " << e.what() << '\n';
 	}
 }
 
@@ -69,7 +69,9 @@ int main(void)
 {
 	Base* pPtr = generate();
 
+	std::cout << "=======================Identify with a pointer=========================" << std::endl;
 	identify(pPtr);
+	std::cout << "=======================Identify with a reference=======================" << std::endl;
 	identify(*pPtr);
 	return 0;
 }

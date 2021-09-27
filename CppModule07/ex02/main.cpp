@@ -27,6 +27,12 @@ int main(int, char**)
             return 1;
         }
     }
+    std::cout << "My array values || Mirror array values" << std::endl;
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        std::cout << numbers[i] << "               ";
+        std::cout << mirror[i] << std::endl;
+    }
     try
     {
         numbers[-2] = 0;

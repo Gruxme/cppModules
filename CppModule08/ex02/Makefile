@@ -6,13 +6,13 @@
 #    By: abiari <abiari@student.1337.ma>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 10:55:48 by abiari            #+#    #+#              #
-#    Updated: 2021/09/20 16:03:06 by abiari           ###   ########.fr        #
+#    Updated: 2021/09/25 17:42:08 by abiari           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = MutantStack
 CC = clang++
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 SRC = main.cpp MutantStack.cpp
 all: $(NAME)
 

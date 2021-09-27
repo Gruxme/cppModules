@@ -44,7 +44,7 @@ int main(int argc, char const *argv[])
 		std::cerr << "Too much arguments!\n";
 		return 1;
 	}
-	if (strlen(argv[1]) == 1 && argv[1][0] < 48 && argv[1][0] > 57)
+	if (strlen(argv[1]) == 1 && ((argv[1][0] < 48 && argv[1][0] >= 32) || (argv[1][0] > 57 && argv[1][0] < 127)))
 	{
 		charScalar = argv[1][0];
 		printChar(charScalar);

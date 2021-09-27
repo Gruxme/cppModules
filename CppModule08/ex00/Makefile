@@ -6,13 +6,13 @@
 #    By: abiari <abiari@student.1337.ma>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/14 10:55:48 by abiari            #+#    #+#              #
-#    Updated: 2021/08/03 12:31:20 by abiari           ###   ########.fr        #
+#    Updated: 2021/09/25 17:42:28 by abiari           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = easyFind
 CC = clang++
-CFLAGS = -Wall -Werror -Wextra -g3
+CFLAGS = -Wall -Werror -Wextra -std=c++98
 SRC = main.cpp
 all: $(NAME)
 

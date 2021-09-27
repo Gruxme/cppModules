@@ -10,13 +10,8 @@ template <typename T>
 void	easyfind(T &toSearch, int toFind)
 {
 	typename T::const_iterator it;
-	for (it = toSearch.cbegin(); it < toSearch.cend(); it++)
-	{
-		if (*it == toFind)
-		{
-			std::cout << "Found!" << std::endl;
-			return;
-		}
-	}
-	throw std::string("Not found");
+	it = std::find(toSearch.begin(), toSearch.end(), toFind);
+	if (*it != toFind)
+		throw std::string("Not found");
+	std::cout << "Found: " << toFind << std::endl;
 }

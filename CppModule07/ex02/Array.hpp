@@ -50,7 +50,7 @@ Array<T>::Array( unsigned int n) : _array(nullptr), _lenght(n)
 }
 
 template <typename T>
-Array<T>::Array( Array<T> const & src ) : _array(nullptr), _lenght(0)
+Array<T>::Array( Array<T> const & src ) : _array(nullptr), _lenght(src._lenght)
 {
 	if (src._lenght > 0)
 	{

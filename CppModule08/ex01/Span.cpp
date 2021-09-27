@@ -8,6 +8,10 @@ Span::Span( unsigned int N ) : _intList() ,_maxSize(N)
 {
 }
 
+Span::Span(Span const & src)
+{
+	this->operator=(src);
+}
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -22,6 +26,12 @@ Span::~Span()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
+Span & Span::operator=(Span const & src)
+{
+	this->_maxSize = src._maxSize;
+	this->_intList = src._intList;
+	return *this;
+}
 
 /*
 ** --------------------------------- METHODS ----------------------------------
@@ -33,6 +43,20 @@ void	Span::addNumber( int nbr )
 		_intList.push_back(nbr);
 	else
 		throw Span::containerFull();
+}
+
+void	Span::addRandomRange( unsigned int n )
+{
+	int currentSize = this->_intList.size();
+	srand(time(NULL));
+	for (size_t i = 0; i < n; i++)
+	{
+		if (i + currentSize < this->_maxSize)
+			this->_intList.push_back(rand());
+		else
+			throw Span::containerFull();
+	}
+	
 }
 
 int		Span::shortestSpan( void )
@@ -64,5 +88,21 @@ int		Span::longestSpan( void )
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
+/*
+** --------------------------------- EXCEPTIONS ---------------------------------
+*/
 
+Span::noSpanAvailable::noSpanAvailable() throw() {}
+Span::noSpanAvailable::~noSpanAvailable() throw() {}
+const char* Span::noSpanAvailable::what() const throw()
+{
+	return "Not enough elements to find a span!";
+}
+
+Span::containerFull::containerFull() throw() {}
+Span::containerFull::~containerFull() throw() {}
+const char* Span::containerFull::what() const throw()
+{
+	return "Container Full";
+}
 /* ************************************************************************** */

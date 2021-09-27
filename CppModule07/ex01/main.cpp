@@ -12,6 +12,6 @@ int	main(void)
 	std::cout << "\nfloat array\n";
 	iter(floatArray, 5, printArray);
 	std::cout << "\nchar array\n";
-	iter(charArray, 5, printArray);
+	iter(charArray, 8, printArray);
 	return 0;
 }

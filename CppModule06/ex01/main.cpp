@@ -12,6 +12,7 @@ int main(void)
 	std::cout << "Data ptr cast to uint: " << raw << std::endl;
 	ptr = deserialize(raw);
 	std::cout << "Data ptr after recast: " << ptr << std::endl;
+	std::cout << ptr->testVar2 << " " << ptr->testVar << std::endl;
 	return 0;
 }
 
